@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 3rem 2rem 2rem;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.school-logo {
+    font-size: 3.5rem;
+    opacity: 0.95;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.school-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 0.25rem;
+}
+
+.academic-year {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.header-divider {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    border-radius: 2px;
+}
+
+.main-content {
+    padding: 3rem 2rem;
+}
+
+.voting-instruction {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f1f5f9;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    margin-bottom: 3rem;
+}
+
+.voting-instruction i {
+    color: #3b82f6;
+    font-size: 1.5rem;
+}
+
+.voting-instruction p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.candidates-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.candidate-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.candidate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+}
+
+.candidate-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #f1f5f9;
+    position: relative;
+    cursor: pointer;
+}
+
+.candidate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+.candidate-image-wrapper:hover .candidate-image {
+    filter: blur(4px) brightness(0.4);
+    transform: scale(1.05);
+}
+
+.vision-mission-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 58, 138, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.candidate-image-wrapper:hover .vision-mission-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.vision-mission-content {
+    color: white;
+    text-align: left;
+    width: 100%;
+    animation: slideInUp 0.4s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.vision-mission-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #fbbf24;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vision-mission-content h4 i {
+    font-size: 1rem;
+}
+
+.vision-mission-content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.vision-mission-content p:last-child {
+    margin-bottom: 0;
+}
+
+.vision-mission-content strong {
+    font-weight: 600;
+    color: #fbbf24;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.candidate-info {
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+}
+
+.candidate-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.candidate-class {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.vote-button {
+    width: calc(100% - 2.5rem);
+    margin: 0 1.25rem 1.25rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.vote-button:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.vote-button:active {
+    transform: translateY(0);
+}
+
+.vote-button i {
+    font-size: 1.1rem;
+}
+
+.footer {
+    background: #f8fafc;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.footer-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.swal2-popup {
+    font-family: 'Inter', sans-serif;
+    border-radius: 16px;
+}
+
+.swal2-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.swal2-html-container {
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+.swal2-confirm {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+}
+
+.swal2-cancel {
+    background: #e2e8f0;
+    color: #475569;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .candidates-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vision-mission-content h4 {
+        font-size: 1rem;
+    }
+
+    .vision-mission-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .candidates-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .vision-mission-content {
+        padding: 0.5rem;
+    }
+
+    .vision-mission-content h4 {
+        font-size: 0.95rem;
+    }
+
+    .vision-mission-content p {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+}

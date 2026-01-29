@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilketos SMKN 2 Setu 2026-2027</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="school-logo">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="header-text">
+                    <h1 class="main-title">Pemilihan Ketua OSIS</h1>
+                    <p class="school-name">SMKN 2 Setu</p>
+                    <p class="academic-year">Tahun Ajaran 2026-2027</p>
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </header>
+
+        <main class="main-content">
+            <div class="voting-instruction">
+                <i class="fas fa-info-circle"></i>
+                <p>Pilih salah satu calon ketua OSIS dengan menekan tombol "Vote" di bawah kandidat pilihan Anda. Arahkan mouse ke foto kandidat untuk melihat visi dan misi.</p>
+            </div>
+
+            <div class="candidates-container" id="candidatesContainer">
+                <div class="candidate-card" data-candidate-id="1">
+                    <div class="candidate-image-wrapper">
+                        <img src="../assets/calon1.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="vision-mission-overlay">
+                            <div class="vision-mission-content">
+                                <h4><i class="fas fa-bullseye"></i> Visi</h4>
+                                <p>ingin mengajak seluruh siswa/i SMKN 2 Setu lebih kreatif, terbuka, dan peduli terhadap sesama, serta menjadikan OSIS sebagai organisasi yang dekat dengan siswa/i, dan menciptakan lingkungan yang bersih, aman, serta tertib dan menyenangkan bagi seluruh siswa/i.</p>
+                                
+                                <h4><i class="fas fa-tasks"></i> Misi</h4>
+                                <p><strong>•</strong> Menjalani hubungan baik antar osis dan ekstrakurikuler yang ada di sekolah dengan asas kekeluargaan</p>
+                                <p><strong>•</strong> Mewujudkan perilaku 3k di organisasi yaitu kerja keras, kerja ikhlas, dan kerja cerdas </p>
+                                <p><strong>•</strong> Mendukung pengembangan bakat minat siswa/i</p>
+                                <p><strong>•</strong> Melanjutkan program kerja OSIS di masa jabatan sebelumnya yang sudah terlaksana maupun belum terlaksana.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="candidate-info">
+                        <h3 class="candidate-name">Iswad Nur Fajri & Anita Fadhilah</h3>
+                        <p class="candidate-class">Paslon 1</p>
+                    </div>
+                    <button class="vote-button" onclick="handleVote(1, 'Iswad Nur Fajri & Anita Fadhilah')">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Vote</span>
+                    </button>
+                </div>
+
+                <div class="candidate-card" data-candidate-id="2">
+                    <div class="candidate-image-wrapper">
+                        <img src="../assets/calon2.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="vision-mission-overlay">
+                            <div class="vision-mission-content">
+                                <h4><i class="fas fa-bullseye"></i> Visi</h4>
+                                <p>menjadikan osis yang bukan hanya bergerak untuk acara, tetapi hadir sebagai ruang tumbuh, berbagi, dan berani beda. demi menciptakan sekola yang hangat, berwarna, dan bermakna untuk siswa/i</p>
+                                
+                                <h4><i class="fas fa-tasks"></i> Misi</h4>
+                                <p><strong>•</strong> menghidupkan budaya kolaborasi melalui kegiatan osis yang membuka ruang ide, bakat, dan aksi nyata seluruh siswa/i</p>
+                                <p><strong>•</strong> membudayakan sikap LISA (lihat sampah ambil)</p>
+                                <p><strong>•</strong> menjadikan osis sebagai sahabat siswa/i bukan hanya panitia dengan menyelenggarakan program rutin yang dekat dengan keseharian pelajar, seperti "ngobrol bareng osis" atau "kelas inspirasi mini"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="candidate-info">
+                        <h3 class="candidate-name">Sugia & Nur Jannah</h3>
+                        <p class="candidate-class">Paslon 2</p>
+                    </div>
+                    <button class="vote-button" onclick="handleVote(2, 'Siti Nurhaliza Putri')">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Vote</span>
+                    </button>
+                </div>
+
+                <div class="candidate-card" data-candidate-id="3">
+                    <div class="candidate-image-wrapper">
+                        <img src="../assets/calon3.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="vision-mission-overlay">
+                            <div class="vision-mission-content">
+                                <h4><i class="fas fa-bullseye"></i> Visi</h4>
+                                <p>Menciptakan lingkungan sekolah yang inklusif, kreatif, dan kompetitif tinggi, di mana setiap siswa merasa dihargai, terlibat, dan memiliki peluang untuk tumbuh secara menyeluruh.</p>
+                                
+                                <h4><i class="fas fa-tasks"></i> Misi</h4>
+                                <p><strong>•</strong> Mendorong partisipasi siswa dalam kegiatan sekolah dan mengutamakan kebutuhan mereka</p>
+                                <p><strong>•</strong> Mengadakan program pengembangan kepemimpinan dan keterampilan sosial siswa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="candidate-info">
+                        <h3 class="candidate-name">Rasya Kayana & Abdul Rahman</h3>
+                        <p class="candidate-class">Paslon 3</p>
+                    </div>
+                    <button class="vote-button" onclick="handleVote(3, 'Muhammad Rizki Pratama')">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Vote</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 SMKN 2 Setu - Sistem Pemilihan Ketua OSIS</p>
+            <p class="footer-subtitle">Demokratis, Transparan, Akuntabel</p>
+        </footer>
+    </div>
+
+    <script src="../script/vote.js"></script>
+</body>
+</html>
