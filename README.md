@@ -1,18 +1,103 @@
-Tentu! Ini draf README yang keren, bersih, dan informatif untuk repository PILKETOS 2026 kamu. Saya sudah menambahkan badge, ikon media sosial, dan struktur yang rapi.
-Silakan copy-paste kode di bawah ini ke file README.md kamu:
 <p align="center">
-  <img src="https://capsule-render.vercel.app/render?type=waving&color=auto&height=200&section=header&text=PILKETOS%202026&fontSize=90" />
+  <img src="https://capsule-render.vercel.app/render?type=soft&color=3ECF8E&height=200&section=header&text=PILKETOS%202026&fontSize=80&animation=fadeIn" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/cexyzp/PILKETOS_2026/stargazers">
-    <img src="https://img.shields.io/github/stars/cexyzp/PILKETOS_2026?style=for-the-badge&color=yellow" alt="stars">
-  </a>
-  <a href="https://github.com/cexyzp/PILKETOS_2026/network/members">
-    <img src="https://img.shields.io/github/forks/cexyzp/PILKETOS_2026?style=for-the-badge&color=blue" alt="forks">
-  </a>
-  <a href="https://github.com/cexyzp/PILKETOS_2026/issues">
-    <img src="https://img.shields.io/github/issues/cexyzp/PILKETOS_2026?style=for-the-badge&color=red" alt="issues">
+  <img src="https://img.shields.io/github/last-commit/cexyzp/PILKETOS_2026?style=for-the-badge&color=3ECF8E" alt="last commit">
+  <img src="https://img.shields.io/github/repo-size/cexyzp/PILKETOS_2026?style=for-the-badge&color=white" alt="repo size">
+  <img src="https://img.shields.io/github/languages/top/cexyzp/PILKETOS_2026?style=for-the-badge&color=339933" alt="top language">
+</p>
+
+<p align="center">
+  <a href="#-technology-stack"><strong>Explore the Docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/cexyzp/PILKETOS_2026/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/cexyzp/PILKETOS_2026/issues">Request Feature</a>
+</p>
+
+---
+
+# 🗳️ Pilketos 2026 - OSIS Election System
+
+Repository ini berisi kode sumber untuk sistem pemilihan Ketua OSIS SMKN 2 Setu masa bakti 2026-2027. Aplikasi ini dirancang untuk menggantikan sistem konvensional menjadi digital yang lebih transparan dan efisien.
+
+Dibuat menggunakan **Node.js**, **Express**, dan **EJS**, serta didukung oleh **Supabase** sebagai backend untuk penyimpanan data dan pembaruan secara real-time.
+
+---
+
+## ✨ Fitur Utama
+
+* **🗳️ Interactive Voting Page**: Interface modern untuk melihat profil kandidat (foto, visi, & misi) sebelum memberikan suara.
+* **📊 Real-time Results Dashboard**: Halaman statistik yang melakukan *auto-refresh* setiap 2 detik menggunakan bar chart untuk memantau perolehan suara secara langsung.
+* **⚙️ Admin Content Management**: Panel admin khusus (`/?key=gocep`) untuk memperbarui data kandidat secara dinamis.
+* **🔄 Vote Reset Functionality**: Fitur reset data suara (`/?key=aris`) untuk kebutuhan pengujian atau inisialisasi ulang periode pemilihan.
+* **🚫 Election State Control**: Sistem dapat dialihkan ke mode "Closed" jika periode pemilihan telah berakhir.
+* **📱 Responsive Design**: Tampilan yang dioptimalkan untuk akses melalui Desktop, Tablet, maupun Smartphone.
+
+---
+
+## 🛠️ Technology Stack
+
+| Komponen | Teknologi |
+| :--- | :--- |
+| **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) |
+| **Frontend** | ![EJS](https://img.shields.io/badge/EJS-B4CA65?style=flat-square&logo=ejs&logoColor=black) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) |
+| **Database** | ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white) |
+| **UI Tools** | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-F8BB86?style=flat-square&logo=sweetalert2&logoColor=white) |
+| **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
+
+---
+
+## 🔑 Accessing the Application
+
+Akses halaman dikontrol melalui query parameter `key` pada URL:
+
+| Halaman | Route / Parameter | Deskripsi |
+| :--- | :--- | :--- |
+| **Dashboard Hasil** | `/?key=aris` | Melihat hasil perolehan suara real-time. |
+| **Panel Admin** | `/?key=gocep` | Mengelola data kandidat dan konten. |
+| **Halaman Default** | Tanpa Key | Menampilkan halaman "Pemilihan Ditutup". |
+
+---
+
+## 🚀 Setup & Local Development
+
+### Prerequisites
+* Node.js & npm installed
+* Akun [Supabase](https://supabase.com/)
+
+### Installation
+```bash
+# 1. Clone repository
+git clone [https://github.com/cexyzp/PILKETOS_2026.git](https://github.com/cexyzp/PILKETOS_2026.git)
+
+# 2. Masuk ke folder
+cd PILKETOS_2026
+
+# 3. Install dependencies
+npm install
+
+Konfigurasi Environment
+Buat file .env dan masukkan kredensial Anda:
+API_KEY=your_supabase_anon_key
+DB_URL=your_supabase_url
+
+> Note: Pastikan Anda telah membuat tabel candidates dan votes di dashboard Supabase sesuai dengan skema SQL yang ada di dokumentasi teknis.
+> 
+👨‍💻 Developer
+Dibuat oleh Aris Sryna
+<a href="https://www.google.com/search?q=https://instagram.com/arissrynaa_" target="blank">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="arissrynaa_" />
+</a>
+🍰 Contributing
+Jika ingin berkontribusi, silakan fork repository ini dan buat pull request. Segala bentuk masukan sangat dihargai!
+ * Fork Proyek ini
+ * Buat Feature Branch (git checkout -b feature/FiturKeren)
+ * Commit perubahan (git commit -m 'Menambahkan fitur keren')
+ * Push ke Branch (git push origin feature/FiturKeren)
+ * Open Pull Request    <img src="https://img.shields.io/github/issues/cexyzp/PILKETOS_2026?style=for-the-badge&color=red" alt="issues">
   </a>
 </p>
 
