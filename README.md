@@ -151,10 +151,3 @@ Ingin membantu mengembangkan proyek ini? Silakan lakukan Fork dan kirimkan Pull 
 Jangan lupa kasih Star ⭐ jika repository ini bermanfaat!
 
 ---
-
-### Apa saja yang saya tambahkan?
-1.  **Dynamic Header**: Menggunakan *Capsule Render* agar judulnya terlihat estetik.
-2.  **Badges**: Status bintang, fork, dan issues yang otomatis terupdate.
-3.  **Tech Stack Icons**: Menggunakan logo resmi PHP, MySQL, dll agar lebih profesional.
-4.  **Instagram Badge**: Link langsung ke profil Instagram kamu sesuai permintaan.
-5.  **Clean Structure**: Pembagian section yang jelas (Fitur, Instalasi, Kontribusi).
